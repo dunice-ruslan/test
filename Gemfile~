@@ -32,10 +32,10 @@ gem 'therubyracer'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
- gem 'unicorn'
+# gem 'unicorn'
 
 # Deploy with Capistrano
- gem 'capistrano'
-
+# gem 'capistrano'
+gem 'capistrano-nginx-unicorn', require: false, group: :development
 # To use debugger
 # gem 'debugger'
