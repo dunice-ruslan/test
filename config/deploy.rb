@@ -38,13 +38,8 @@ set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEA
 
 default_environment["RAILS_ENV"] = 'production'
 
-# Use our ruby-1.9.2-p290@my_site gemset
-default_environment["PATH"]         = "--"
-default_environment["GEM_HOME"]     = "--"
-default_environment["GEM_PATH"]     = "--"
-default_environment["RUBY_VERSION"] = "ruby-1.9.2-p290"
 
-default_run_options[:shell] = 'bash'
+#default_run_options[:shell] = 'bash'
 
 namespace :deploy do
   desc "Deploy your application"
@@ -109,10 +104,10 @@ namespace :deploy do
     end
   end
 
-  desc "Zero-downtime restart of Unicorn"
-  task :restart, :except => { :no_release => true } do
-    run "kill -s USR2 `cat /tmp/unicorn.my_site.pid`"
-  end
+  #desc "Zero-downtime restart of Unicorn"
+  #task :restart, :except => { :no_release => true } do
+  #  run "kill -s USR2 `cat /tmp/unicorn.test.pid`"
+  #end
 
   desc "Start unicorn"
   task :start, :except => { :no_release => true } do
@@ -121,7 +116,7 @@ namespace :deploy do
 
   desc "Stop unicorn"
   task :stop, :except => { :no_release => true } do
-    run "kill -s QUIT `cat /tmp/unicorn.my_site.pid`"
+    run "kill -s QUIT `cat /tmp/unicorn.test.pid`"
   end
 
   namespace :rollback do
