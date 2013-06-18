@@ -82,11 +82,6 @@ namespace :deploy do
     restart
   end
 
-  desc "Zero-downtime restart of Unicorn"
-  task :restart, :except => { :no_release => true } do
-    run "kill -s USR2 `cat #{current_path}/config/tmp/unicorn.pid`"
-  end
-
   desc "Start unicorn"
   task :start, :except => { :no_release => true } do
     run "cd #{current_path}/config  ; unicorn_rails unicorn.rb -D"
@@ -94,7 +89,7 @@ namespace :deploy do
 
   desc "Stop unicorn"
   task :stop, :except => { :no_release => true } do
-    run "kill -s QUIT `cat #{current_path}/config/tmp/unicorn.pid`"
+    run "kill -s QUIT `cat #{current_path}/config/tmp/pids/unicorn.pid`"
   end
 
   namespace :rollback do
