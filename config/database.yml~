@@ -28,4 +28,4 @@ production:
   database: instamart
   username: instamart
   host: vs03.secoint.ru
-  password: B2guHwMCC	
+  password: B2guHwMCC

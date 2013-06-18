@@ -112,32 +112,6 @@ namespace :deploy do
   end
 end
 
-namespace :nginx do
-  set :nginx_cfg, "/etc/nginx/nginx.conf"
-  set :nginx_pid, "/usr/local/etc/nginx/logs/nginx.pid"
-
-  desc "Start nginx-server"
-  task :start do
-    sudo "nginx -c #{nginx_cfg}"
-  end
-
-  desc "Stop nginx-server"
-  task :stop do
-    pid = get_nginx_pid
-    sudo "kill -s QUIT #{pid}"
-  end
-
-  desc "Re-start nginx-server"
-  task :restart do
-    stop
-    start
-  end
-
-  def get_nginx_pid
-    capture "if [ -f #{nginx_pid} ] ; then cat #{nginx_pid}; fi"
-  end
-end
-
 def run_rake(cmd)
   run "cd #{current_path}; #{rake} #{cmd}"
 end

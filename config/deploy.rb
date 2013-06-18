@@ -36,6 +36,12 @@ set(:current_revision)  { capture("cd #{current_path}; git rev-parse --short HEA
 set(:latest_revision)   { capture("cd #{current_path}; git rev-parse --short HEAD").strip }
 set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEAD@{1}").strip }
 
+
+set :stages, ["staging", "production"]
+set :default_stage, "staging"
+
+
+
 default_environment["RAILS_ENV"] = 'production'
 
 
