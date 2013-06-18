@@ -12,7 +12,7 @@
 # закомментируйте эту строку.
 require 'bundler/capistrano'
 
-load 'deploy/assets'
+#load 'deploy/assets'
 
 # Для удобства работы мы рекомендуем вам настроить авторизацию
 # SSH по ключу. При работе capistrano будет использоваться
@@ -20,7 +20,7 @@ load 'deploy/assets'
 # авторизацию на другие хосты.
 # Если вы не используете авторизацию SSH по ключам И ssh-agent,
 # закомментируйте эту опцию.
-ssh_options[:forward_agent] = true
+#ssh_options[:forward_agent] = true
 
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
@@ -30,7 +30,7 @@ set :application,     "test"
 set :deploy_server,   "vs02.secoint.ru"
 
 # Не включать в поставку разработческие инструменты и пакеты тестирования.
-set :bundle_without,  [:development, :test]
+#set :bundle_without,  [:development, :test]
 
 set :user,            "instamart"
 set :login,           "instamart"
