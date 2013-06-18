@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+require 'capistrano/ext/multistage'
 
 load 'deploy/assets'
 set :application,     "test"
@@ -39,7 +40,7 @@ set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEA
 
 
 set :stages, ["staging", "production"]
-set :default_stage, "staging"
+set :default_stage, "production"
 
 
 
