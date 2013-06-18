@@ -12,7 +12,7 @@
 # закомментируйте эту строку.
 require 'bundler/capistrano'
 
-load 'deploy/assets'
+#load 'deploy/assets'
 
 # Для удобства работы мы рекомендуем вам настроить авторизацию
 # SSH по ключу. При работе capistrano будет использоваться
