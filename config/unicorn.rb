@@ -8,7 +8,7 @@ worker_processes 4
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "/home/instamart/test/current/tmp/test.socket", :backlog => 64
+listen "/home/instamart/test/shared/tmp/pids/test.socket", :backlog => 64
 
 # Preload our app for more speed
 preload_app true
@@ -16,7 +16,7 @@ preload_app true
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
 
-pid "/home/instamart/test/current/tmp/unicorn.test.pid"
+pid "/home/instamart/test/shared/tmp/pids/unicorn.test.pid"
 
 # Production specific settings
 if env == "production"
@@ -41,7 +41,7 @@ before_fork do |server, worker|
 
   # Before forking, kill the master process that belongs to the .oldbin PID.
   # This enables 0 downtime deploys.
-  old_pid = "/home/instamart/test/current/tmp/unicorn.test.pid.oldbin"
+  old_pid = "/home/instamart/test/shared/tmp/pids/unicorn.test.pid.oldbin"
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
