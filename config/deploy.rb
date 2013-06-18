@@ -20,6 +20,7 @@ role :app,            deploy_server
 role :db,             deploy_server, :primary => true
 set :bundle_dir,      "/home/instamart/.rvm/gems/ruby-1.9.3-p429"
 set :normalize_asset_timestamps, false
+set :deploy_via, :remote_cache
 
 set :rvm_ruby_string, "1.9.3"
 set :rake,            "rvm use #{rvm_ruby_string} do bundle exec rake"
