@@ -9,7 +9,7 @@ set :user,            "instamart"
 set :login,           "instamart"
 set :use_sudo,        false
 set :deploy_to,       "/home/#{user}/#{application}"
-set :unicorn_conf,    "/home/#{user}/#{application}/config/unicorn.rb"
+set :unicorn_conf,    "/home/#{user}/unicorn/unicorn.rb"
 set :unicorn_pid,     "/var/run/unicorn/#{application}.#{login}.pid"
 set :bundle_dir,      File.join(fetch(:shared_path), 'gems')
 role :web,            deploy_server
