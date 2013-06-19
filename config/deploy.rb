@@ -39,7 +39,7 @@ set(:latest_revision)   { capture("cd #{current_path}; git rev-parse --short HEA
 set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEAD@{1}").strip }
 
 
-set :stages, ["staging", "production"]
+set :stages, %w{staging production}
 set :default_stage, "production"
 
 
