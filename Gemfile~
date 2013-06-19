@@ -36,7 +36,7 @@ gem 'therubyracer'
 
 # Deploy with Capistrano
  gem 'capistrano'
-gem capistrano-ext
+ gem 'capistrano-ext'
 # To use debugger
 # gem 'debugger'
 

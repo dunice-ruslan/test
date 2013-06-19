@@ -32,13 +32,11 @@ gem 'therubyracer'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
- gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
- gem 'capistrano'
- gem 'capistrano-ext'
-# To use debugger
-# gem 'debugger'
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 gem 'spree', '2.0.3'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-0-stable'
